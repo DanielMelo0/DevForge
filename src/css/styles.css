@@ -36,10 +36,12 @@ body {
   flex-direction: column;
   font-family: "Poppins", sans-serif;
 }
+
 .container {
   width: 100%;
   max-width: 1700px;
 }
+
 /* ====== */
 /* HEADER */
 /* ====== */
@@ -74,6 +76,7 @@ header {
   align-self: center;
   transition: transform 0.45s ease;
 }
+
 .logo:hover {
   transform: scale(1.1);
 }
@@ -181,6 +184,7 @@ header.sticky {
   margin-inline: 2rem;
   padding-inline: 2rem;
 }
+
 .home-content {
   display: flex;
   flex-direction: column;
@@ -196,17 +200,20 @@ header.sticky {
   padding-block: 1rem;
   width: 39rem;
 }
+
 .home-content h4 {
   font-size: 1.5rem;
   color: var(--orange-color);
   font-family: "Poppins", Arial, sans-serif;
   text-transform: none;
 }
+
 .home-content p {
   font-size: 1.2rem;
   color: rgb(164, 164, 164);
   padding-bottom: 2rem;
 }
+
 .btn-orcamento {
   background-color: var(--orange-color);
   color: var(--white);
@@ -222,6 +229,7 @@ header.sticky {
   align-items: center;
   justify-content: center;
 }
+
 .btn-orcamento:hover {
   transform: scale(1.05);
   background-color: #8b451e;
@@ -235,9 +243,11 @@ header.sticky {
   box-shadow: 4px 4px 10px;
   transition: transform 0.45s ease;
 }
+
 .home img:hover {
   transform: scale(1.012);
 }
+
 /* ====== */
 /* SERVIÇOS */
 /* ====== */
@@ -249,6 +259,7 @@ header.sticky {
   margin-bottom: 5rem;
   color: white;
 }
+
 .titulo-Servicos {
   font-size: 2.5rem;
   margin-bottom: 3rem;
@@ -366,83 +377,123 @@ header.sticky {
 /* ====== *
 /*  ROAD MAP */
 /* ====== */
-
-#roadmap {
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.roadmap-title {
-  font-size: 48px;
-  color: var(--orange-color);
-  font-family: "Fonarto", sans-serif;
-}
-.roadmap-subtitle {
-  margin-bottom: 30px;
-  color: var(--white);
-  font-size: 18px;
-}
-.roadmap-map {
+.road__box {
+  position: relative;
+  width: 18.75rem;
+  height: 25.75rem;
   display: flex;
-  padding: 5rem;
-}
-.roadmap-all {
-  position: flex;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 1.5rem;
-}
-.roadmap-map {
-  position: relative;
-  margin: 20px 0;
+  background: #000;
+  margin: 40px;
+  transition: 0.5s;
 }
 
-.roadmap-line {
+.road__box:hover {
+  height: 31.25rem;
+}
+
+.road__box .imgBx {
   position: absolute;
+  top: 0;
   width: 100%;
-  height: 100px;
-  top: 35%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 0;
+  height: 100%;
+  padding: 0.625rem;
+  box-sizing: border-box;
 }
 
-.roadmap-all {
-  position: relative;
-  z-index: 1;
+.road__box .imgBx img {
+  max-width: 100%;
+  opacity: 0.5;
+  transition: 0.5s;
 }
-.roadmap-icons {
-  width: 100px;
-  height: 100px;
-  background-color: var(--third-color);
-  border-radius: 20%;
+
+.road__box:hover .imgBx img {
+  opacity: 1;
+}
+
+.road__box:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+}
+
+.road__box:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(40px);
+}
+
+.road__box:before,
+.road__box:after {
+  background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+}
+
+.road__box:nth-child(2):before,
+.road__box:nth-child(2):after {
+  background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+}
+
+
+.road__box:nth-child(3):before,
+.road__box:nth-child(3):after {
+  background: linear-gradient(235deg, #772aff, #010615, #2196F3);
+}
+
+.road__box .road__content {
+  position: absolute;
+  bottom: 0;
+  left: 0.625rem;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  height: 5.625rem;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.roadmap-icons img {
-  width: 50%;
-  height: auto;
+.road__box:hover .road__content {
+  opacity: 1;
 }
 
-.roadmap-text h3 {
-  margin: 0 0 10px 0;
-  font-size: 24px;
-  color: var(--orange-color);
-  font-family: "archimoto", Arial, sans-serif;
+.road__box .road__content h2 {
+  font-size: 1.25rem;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
 }
 
-.roadmap-text p {
-  margin: 0;
-  font-size: 16px;
-  color: #ccc;
-  padding-inline: 3rem;
+.road__box .road_content h2 span {
+  font-size: 0.875rem;
+  color: var(--white);
+  font-weight: 200;
+  letter-spacing: 0.0625rem;
 }
+
+section.roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70vh;
+}
+
+
+
 
 /* ====== */
 /* PORTIFÓLIO */
@@ -502,7 +553,7 @@ section.portfolio .main-text h2 {
 .layer {
   width: 100%;
   height: 0;
-  background: linear-gradient(rgba(0,0,0,0.1), var(--orange-color));
+  background: linear-gradient(rgba(0, 0, 0, 0.1), var(--orange-color));
   position: absolute;
   border-radius: 0.5rem;
   left: 0;
@@ -553,105 +604,128 @@ section.portfolio .main-text h2 {
   height: 100%;
 }
 
+/*============== Contact Section ===============*/
 
-
-
-
-
-
-
-
-
-.hidden {
-  display: none;
+.contact {
+  background: #000;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2.5rem;
 }
 
-.load-more {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
+.contact-text h4 {
+  color: var(--white);
+  margin: 1.125rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
-*/
 
-/* ====== */
-/* ORÇAMENTO */
-/* ====== */
-.orcamento-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: var(--white);
-  font-family: Arial, sans-serif;
+.contact-text h2 {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--white);
 }
-#orcamento {
-  background-color: var(--white);
+
+.contact-text span {
+  color: var(--orange-color);
 }
-#orcamento .title-orcamento {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: var(--blue-color);
-  padding-block: 1rem;
-  font-family: "Fonarto", Arial, sans-serif;
-  text-align: center;
+
+.contact-text p {
+  color: var(--white);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.875rem;
 }
-.orcamento-form,
-.orcamento-info {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #eee;
+
+.list {
+  margin-bottom: 2.8rem;
+}
+
+.list li {
+  margin-bottom: 0.75rem;
+}
+
+.list li a {
+  display: block;
+  color: var(--white);
+  font-size: 0.875rem;
+  transition: all .45s ease;
+}
+
+.list li a:hover {
+  color: var(--orange-color);
+  transform: translateX(5px);
+}
+
+.list li a {
+  display: block;
+  color: var(--white);
+  font-size: 14px;
+  transition: all .45s ease;
+}
+
+.contact-icons i {
+  height: 45px;
+  width: 45px;
+  background: var(--orange-color);
+  color: var(--white);
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
+  transition: all .45s ease;
 }
 
-.orcamento-form h2,
-.orcamento-info h2 {
-  color: #333;
+.contact-icons i:hover {
+  background: var(--orange-color);
+  color: var(--white);
 }
 
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+.contact-form form {
+  position: ralative;
+}
+
+.contact-form form input, textarea, #select {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px;
+  background: #000;
+  color: var(--white);
+  border: 1px solid var(--orange-color);
+  outline: none;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  
 }
 
-textarea {
-  height: 100px;
+
+.contact-form textarea {
+  resize: none;
+  height: 240px;
 }
 
-#orcamento button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
+
+.contact-form .submit {
+  display: inline-block;
+  font-size: 16px;
+  background: var(--orange-color);
+  color: var(--white);  
+  transition: all .45s ease;
+}
+
+.contact-form .submit:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
-#orcamento button:hover {
-  background-color: #45a049;
+
+section.contact {
+  padding: 6.875rem 3% 3.75rem;
 }
 
-.orcamento-info p {
-  margin: 10px 0;
-  line-height: 1.6;
-}
-
-.fa-phone,
-.fa-map-marker-alt,
-.fa-instagram,
-.fa-envelope {
-  margin-right: 10px;
-}
-*/
 
 /* ====== */
 /* FOOTER */
@@ -678,6 +752,7 @@ textarea {
 .logo-section {
   text-align: center;
 }
+
 .footer-section {
   flex: 1;
 }
@@ -733,6 +808,7 @@ textarea {
   margin-right: 20px;
   transition: color 0.3s;
 }
+
 .footer-section a {
   text-decoration: none;
   color: var(--white);
@@ -741,9 +817,11 @@ textarea {
 .footer-policy a:hover {
   color: var(--orange-color);
 }
+
 .footer li {
   transition: transform 0.4s ease, color 0.4s ease;
 }
+
 .footer li:hover {
   transform: scale(1.09);
   color: var(--orange-color);
@@ -772,11 +850,11 @@ textarea {
 }
 
 .whats-link:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 .whats-link:hover #icon {
-  transform: scale(1.5); 
+  transform: scale(1.5);
 
 }
 
@@ -790,7 +868,8 @@ textarea {
   .header ul {
     flex-direction: column;
     width: 100%;
-    display: none; /* Esconde os links até que o menu hambúrguer seja clicado */
+    display: none;
+    /* Esconde os links até que o menu hambúrguer seja clicado */
     position: absolute;
     background-color: var(--third-color);
     top: 60px;
@@ -827,6 +906,7 @@ textarea {
   .orcamento-container {
     flex-direction: column;
   }
+
   .roadmap-line {
     display: none;
   }
@@ -842,7 +922,8 @@ textarea {
   .header ul {
     flex-direction: column;
     width: 100%;
-    display: none; /* Esconde os links até que o menu hambúrguer seja clicado */
+    display: none;
+    /* Esconde os links até que o menu hambúrguer seja clicado */
     position: absolute;
     background-color: var(--third-color);
     top: 60px;
@@ -875,7 +956,9 @@ textarea {
     flex-direction: column;
   }
 }
+
 @media (max-width: 1024px) {
+
   .home img,
   .home-content {
     width: 80%;

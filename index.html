@@ -117,53 +117,29 @@
     </section>
 
     <!-- Inicio ROADMAP -->
-    <section id="roadmap">
-      <h1 class="roadmap-title">Road Map</h1>
-      <!-- Título da seção -->
-      <h3 class="roadmap-subtitle">
-        Esse é o caminho que iremos seguir com o projeto de sua empresa
-      </h3>
-      <!-- Descrição -->
-      <div class="roadmap-map">
-        <div class="roadmap-all">
-          <div class="roadmap-icons">
-            <img src="" alt="" />
-          </div>
-          <div class="roadmap-text">
-            <h3>Escolha o tipo de site</h3>
-            <p>
-              Site sob medida ou site com template? Ajudamos a definir o tipo
-              de site ideal para você!
-            </p>
-          </div>
-
+    <section class="roadmap" id="roadmap">
+      <div class="road__box">
+        <div class="imgBx">
+          <img src="src/img/img1.jpeg">
         </div>
-
-        <div class="roadmap-all">
-          <div class="roadmap-icons">
-            <img src="" alt="" />
-          </div>
-          <div class="roadmap-text">
-
-            <h3>Adicionais</h3>
-            <p>
-              Escolha os adicionais do seu site. Blog, Multi-idioma,
-              Portifólio, Área de membros e mais!
-            </p>
-          </div>
+        <div class="road__content">
+          <h2>Escolha Seu Website<br><span>Sites sob Medida</span></h2>
         </div>
-
-        <div class="roadmap-all">
-          <div class="roadmap-icons">
-            <img src="" alt="" />
-          </div>
-          <div class="roadmap-text">
-            <h3>Pronto para começar!</h3>
-            <p>
-              Emissão do contrato, briefing e mãos na massa! Em poucos dias um
-              site novinho em folha!
-            </p>
-          </div>
+      </div>
+      <div class="road__box ">
+        <div class="imgBx">
+          <img src="src/img/img1.jpeg">
+        </div>
+        <div class="road__content">
+          <h2>Adicionais<br><span>Entre em Contato</span></h2>
+        </div>
+      </div>
+      <div class="road__box">
+        <div class="imgBx">
+          <img src="src/img/img1.jpeg">
+        </div>
+        <div class="road__content">
+          <h2>Pronto pra Começar<br><span>Entre em Contato</span></h2>
         </div>
       </div>
     </section>
@@ -233,46 +209,45 @@
 
     <!--PORTIFÍLIO fim-->
 
-    <!-- ORÇAMENTO -->
-    <div id="orcamento">
-      <h2 class="title-orcamento">Solicite um orçamento</h2>
-      <div class="orcamento-container">
-        <div class="orcamento-form">
-          <form action="" method="POST">
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="E-mail" required>
-            <input type="text" placeholder="Nome da Empresa" required>
-            <select required>
-              <option value="">Qual o seu cargo na empresa?</option>
-              <option value="gerente">Gerente</option>
-              <option value="diretor">Diretor</option>
-              <!-- Outras opções -->
-            </select>
-            <select required>
-              <option value="">Quantidade de funcionários?</option>
-              <option value="1-10">1-10</option>
-              <option value="11-50">11-50</option>
-              <!-- Outras opções -->
-            </select>
-            <select required>
-              <option value="">Quem faz o mkt digital para sua empresa?</option>
-              <option value="interno">Equipe Interna</option>
-              <option value="externo">Agência Externa</option>
-              <!-- Outras opções -->
-            </select>
-            <textarea placeholder="Descreva sua necessidade" required></textarea>
-            <button type="submit">Solicite agora</button>
-          </form>
+    <!-- Formulario Design Init -->
+    <section class="contact" id="contact">
+      <div class="contact-text">
+        <h2>Entre em <span>Contato</span></h2>
+        <h4>Nossos Profissionais estão prontos para lhe atender</h4>
+        <p>Equipe especializada em Projetos Full Stack, Design e Marketing Multimidia</p>
+        <div class="list">
+          <li><a href="#"> +55 11 9999-999</a></li>
+          <li><a href="#"> +55 11 9999-999</a></li>
+          <li><a href="#">contato@devforge.dev.br</a></li>
         </div>
-        <div class="orcamento-info">
-          <h2>Ou entre em contato</h2>
-          <p><i class="fa fa-phone"></i> +55 11 9999-9999</p>
-          <p><i class="fa fa-map-marker-alt"></i> Av Paulista, 0000 - Bela Vista São Paulo/SP</p>
-          <p><i class="fab fa-instagram"></i> @devforge</p>
-          <p><i class="fa fa-envelope"></i> contato@devforge.dev.br</p>
+        <div class="contact-icons">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
         </div>
       </div>
-    </div>
+      <div class="contact-form">
+        <form action="" method="post">
+          <input type="name" name="name" placeholder="Digite seu Nome" required>
+          <input type="email" name="email" placeholder="Nome da Empresa" required>
+          <input type="email" name="email" placeholder="Digite seu E-mail" required>
+          <input type="text" name="cargo" placeholder="Digite seu Cargo" required>
+          <input type="text" name="phone" placeholder="Digite a Quantidade de Funcionarios" required>
+          <input type="text" name="phone" placeholder="Quem faz o mkt digital para sua empresa" required>
+          <select required id="select">
+            <option value="">Quem faz o mkt digital para sua empresa?</option>
+            <option value="interno">Equipe Interna</option>
+            <option value="externo">Agência Externa</option>
+          </select>
+          <textarea name="message" id="" cols="35" rows="10" placeholder="Como podemos ajudar" required></textarea>
+          <input type="hidden" name="redirectTo" value="">
+          <input type="submit" value="Enviar" class="submit" required>
+
+        </form>
+
+    </section>
+
+    <!-- Formulario Design Finish -->
+
     <!-- FOOTER  -->
     <footer class="footer">
       <div class="footer-content">
@@ -341,9 +316,9 @@
   </footer>
 
   <!-- WhatsApp Icon -->
-   <a href="#" class="whats-link">
+  <a href="#" class="whats-link">
     <i class='bx bxl-whatsapp' id="icon"></i>
-   </a>
+  </a>
 
   <script src="src/script/scripts.js"></script>
   <script>
